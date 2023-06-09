@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 
 const Signup = () => {
+  const Base_Url = process.env.NEXT_PUBLIC_HOST;
   let router = useRouter();
   const [username, setUsername] = useState('')
   const [name, setName] = useState('')
@@ -19,9 +20,8 @@ const Signup = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   const data = {username,name,email,password};
-  toast.success("Thanks! your account has been successfully created")
-
-  let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`,{
+  
+  let res = await fetch(`${Base_Url}/api/signup`,{
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -29,12 +29,13 @@ const handleSubmit = async (e) => {
     body: JSON.stringify(data),
   })
   let response = await res.json();
+  toast.success("Thanks! your account has been successfully created")
   console.log(response);
   setUsername('');
   setName('');
   setEmail('');
   setPassword('');
-  router.push(`${process.env.NEXT_PUBLIC_HOST}/login`);
+  router.push(`${Base_Url}/login`);
 }
 
 const handleChange = (e) => {

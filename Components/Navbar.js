@@ -1,5 +1,4 @@
 import React, { useRef, useState,useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai'
 import { BsFillBagCheckFill } from 'react-icons/bs'
