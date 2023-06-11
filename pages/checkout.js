@@ -8,6 +8,7 @@ import Script from 'next/script'
 import { toast } from 'react-toastify';
 
 const Checkout = ({ cart, clearCart, addToCart, removeFromCart, subTotal }) => {
+  const BASE_URL = process.env.NEXT_PUBLIC_HOST;
   const [username, setUsername] = useState("")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -43,7 +44,7 @@ const Checkout = ({ cart, clearCart, addToCart, removeFromCart, subTotal }) => {
   
 
   const fetchData = async () => {
-    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+    let a = await fetch(`${BASE_URL}/api/getuser`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -60,7 +61,7 @@ const Checkout = ({ cart, clearCart, addToCart, removeFromCart, subTotal }) => {
   }
 
   const getPinCode = async(pin)=> {
-    let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
+    let pins = await fetch(`${BASE_URL}/api/pincode`);
         let pinJson = await pins.json();
         if (Object.keys(pinJson).includes(pin)) {
           setState(pinJson[pin][1]);
@@ -106,7 +107,7 @@ const Checkout = ({ cart, clearCart, addToCart, removeFromCart, subTotal }) => {
     let oid = JSON.stringify(Math.floor(Math.random() * Date.now()));
     const data = { cart, subTotal, email, oid, name, username, address, pincode, phone, state, city };
     // Get a paymentSession ID
-    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pretransaction`, {
+    let a = await fetch(`${BASE_URL}/api/pretransaction`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,6 +6,9 @@ const http = require('https');
 import pincodes from '../../pincodes.json'
 
 const handler = async (req, res) => {
+    const BASE_URL = process.env.NEXT_PUBLIC_HOST;
+    const SKEY = process.env.CFTEST_SECRETKEY;
+    const AID = process.env.NEXT_PUBLIC_CFTEST_APPID;
     if (req.method == "POST") {
 
         // check if pincode is serviceable or not
@@ -79,14 +82,14 @@ const handler = async (req, res) => {
             },
             order_meta: {
                 // notify_url: "${process.env.NEXT_PUBLIC_HOST}/api/getPayment?order_id={order_id}",
-                return_url: `${process.env.NEXT_PUBLIC_HOST}/api/posttransaction?order_id={order_id}`,
+                return_url: `${BASE_URL}/api/posttransaction?order_id={order_id}`,
             },
             terminal_data: {
 
             }
         };
 
-        const signature = crypto.createHmac('sha256', process.env.CFTEST_SECRETKEY).update(JSON.stringify(cfParams)).digest('hex');
+        const signature = crypto.createHmac('sha256', SKEY).update(JSON.stringify(cfParams)).digest('hex');
          cfParams.head = {
             signature: signature
         }
@@ -103,8 +106,8 @@ console.log(cfParams)
                     'x-api-version': '2022-09-01',
                     'content-type': 'application/json',
                     "x-api-version": "2022-09-01",
-                    "x-client-id": process.env.NEXT_PUBLIC_CFTEST_APPID,
-                    "x-client-secret": process.env.CFTEST_SECRETKEY,
+                    "x-client-id": AID,
+                    "x-client-secret": SKEY,
                     "x-cf-signature": signature
                     // "Content-Length": post_data.length
                 }

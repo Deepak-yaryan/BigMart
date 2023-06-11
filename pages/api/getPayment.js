@@ -1,8 +1,9 @@
 import connectToMongo from "@/middleware/mongoose"
-import Order from "@/models/Order"
 const http = require('https');
 
 const handler = async (req, res) => {
+    const SKEY = process.env.CFTEST_SECRETKEY;
+    const AID = process.env.NEXT_PUBLIC_CFTEST_APPID;
     console.log(req.body.order_id);
     const requestAsync = async () => {
         const options = {
@@ -12,8 +13,8 @@ const handler = async (req, res) => {
             path: `/pg/orders/${req.body.order_id}/payments`,
             headers: {
                 accept: 'application/json',
-                'x-client-id': 'TEST37951548816bac9aacd8f3e225515973',
-                'x-client-secret': 'TESTb297328882064fe5a756275621b6df0b603b5c0f',
+                'x-client-id': AID,
+                'x-client-secret': SKEY,
                 'x-api-version': '2022-09-01'
             }
         };

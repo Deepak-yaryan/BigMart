@@ -4,11 +4,12 @@ import Product from "@/models/Product";
 // const { Payouts } = require('@cashfreepayments/cashfree-sdk')
 
 const handler = async (req, res) => {
+    const BASE_URL = process.env.NEXT_PUBLIC_HOST;
     let order;
     const { order_id } = req.query;
     const data = { order_id };
     console.log(order_id);
-    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getPayment`, {
+    let a = await fetch(`${BASE_URL}/api/getPayment`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
