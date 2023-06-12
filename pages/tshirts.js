@@ -10,6 +10,7 @@ const Tshirt = ({ products }) => {
         <div className=" px-5 py-10 mx-auto">
           <div className="flex flex-row flex-wrap">
 
+          {Object.keys(products).length === 0 && <p className='text-xl font-bold'>Sorry All T-shirts are currently out of stock. New stock coming soon. Stay Tuned!</p>}
             {Object.keys(products).map((item) => {
               return <Link passHref={true} key={products[item]._id} href={`/product/${products[item].slug}`} legacyBehavior>
                 <div className="lg:w-1/5 md:w-1/2 p-4 w-full  cursor-pointer shadow-lg  mx-9 my-5">

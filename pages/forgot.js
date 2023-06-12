@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
-const Forgot = () => {
+const Forgot = ({setProgress}) => {
   let router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,6 +28,7 @@ const Forgot = () => {
   }, [])
 
   const sendResetEmail = async (e) => {
+    setProgress(40);
     e.preventDefault();
     let data = { email, sendMail: true };
     let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/forgot`, {
@@ -42,10 +43,12 @@ const Forgot = () => {
     if (res.success) {
       toast.success("Password reset Instructions has been sent to your Email");
       setTimeout(() => {
+        setProgress(100);
         router.push('https://gmail.com');
       }, 1500);
     }
     else {
+      setProgress(100);
       toast.error("Some error occured while generating the reset Password Email. Please try again after Some time");
     }
   }

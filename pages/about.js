@@ -4,12 +4,14 @@ const About = () => {
   return (
     <div class="min-h-screen mx-auto dark:bg-gray-800 dark:text-gray-100">
       <section class="body-font">
-        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-          <img class="w-24 md:w-36 mb-10 object-cover object-center rounded" alt="hero" src="/codeswearcircle.png" />
+        <div class="container mx-auto flex px-5 pt-10 pb-24 items-center justify-center flex-col">
+          <div className='w-40 h-40 md:w-60 md:h-60'>
+          <img class=" mb-10 object-cover object-center rounded-3xl" alt="hero" src="/BiggiMartcircle.png" />
+          </div>
           <div class="text-center lg:w-2/3 w-full">
-            <h1 class="title-font sm:text-4xl text-3xl mb-2 font-medium">Welcome to <span>Codeswear.com</span></h1>
+            <h1 class="title-font sm:text-4xl text-3xl mb-2 font-medium">Welcome to <span>BiggiMart.com</span></h1>
             <p class="text-xl leading-relaxed mb-2">Buy <span class="text-pink-700 dark:text-pink-600 font-semibold">Sweatshirts</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></p>
-            <p class="mb-8 leading-relaxed">Introducing CodesWear, a revolutionary e-commerce platform that delivers amazing products at unbeatable prices. Built on a foundation of NextJs and MongoDB, our website offers a seamless shopping experience powered by server-side rendering. Whether you're a tech enthusiast or simply looking for a stylish geek T-shirt, CodesWear has something for everyone. And for those curious about the development process, be sure to check out the CodeWithHarry NextJs playlist on YouTube. Shop now at CodesWear and experience the future of online shopping.</p>
+            <p class="mb-8 leading-relaxed">Introducing BiggiMart, a revolutionary e-commerce platform that delivers amazing products at unbeatable prices. Built on a foundation of NextJs and MongoDB, our website offers a seamless shopping experience powered by server-side rendering. Whether you're a tech enthusiast or simply looking for a stylish geek T-shirt, BiggiMart has something for everyone. And for those curious about the development process, be sure to check out the CodeWithHarry NextJs playlist on YouTube. Shop now at BiggiMart and experience the future of online shopping.</p>
             <div class="flex justify-center">
               <a href="/tshirts"><button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Start Shopping</button></a>
             </div>
@@ -19,12 +21,12 @@ const About = () => {
       <hr />
       <section class="flex mt-8 body-font mx-8 px-8">
         <div class="flex flex-col md:w-2/3">
-          <h1 class="font-semibold my-2 text-3xl">About Codeswear</h1>
-          <p class="mb-2 leading-relaxed">Codeswear.com is revolutionizing the way India shops for unique, geeky apparel. From our one-of-a-kind hoodie designs to our wide selection of stickers, mugs and other accessories, we have everything you need to express your individuality and stand out from the crowd. Say goodbye to the hassle of hopping from store to store in search of your perfect geeky look. With just a single click on our website, you can find it all!</p>
-          <p class="mb-2 leading-relaxed">But what sets Codeswear apart from the competition? The answer is simple: our unique designs and commitment to providing the highest quality products. We understand the importance of style and durability, which is why we put so much effort into creating unique designs and using only the best materials. Don't settle for mediocre clothing and accessories - choose Codeswear and make a statement with your wardrobe.</p>
-          <p class="mb-2 leading-relaxed">At Codeswear, we strive to be more than just an online store - we want to be a community where like-minded individuals can come together and express themselves through fashion. Whether you're a gamer, a programmer, or simply someone who loves all things geeky, we have something for you. Our collection is curated with the latest trends and fan favorites in mind, ensuring that you'll always find something new and exciting.</p>
+          <h1 class="font-semibold my-2 text-3xl">About BiggiMart</h1>
+          <p class="mb-2 leading-relaxed">BiggiMart.com is revolutionizing the way India shops for unique, geeky apparel. From our one-of-a-kind hoodie designs to our wide selection of stickers, mugs and other accessories, we have everything you need to express your individuality and stand out from the crowd. Say goodbye to the hassle of hopping from store to store in search of your perfect geeky look. With just a single click on our website, you can find it all!</p>
+          <p class="mb-2 leading-relaxed">But what sets BiggiMart apart from the competition? The answer is simple: our unique designs and commitment to providing the highest quality products. We understand the importance of style and durability, which is why we put so much effort into creating unique designs and using only the best materials. Don't settle for mediocre clothing and accessories - choose BiggiMart and make a statement with your wardrobe.</p>
+          <p class="mb-2 leading-relaxed">At BiggiMart, we strive to be more than just an online store - we want to be a community where like-minded individuals can come together and express themselves through fashion. Whether you're a gamer, a programmer, or simply someone who loves all things geeky, we have something for you. Our collection is curated with the latest trends and fan favorites in mind, ensuring that you'll always find something new and exciting.</p>
           <p class="mb-2 leading-relaxed">We also understand the importance of affordability and convenience. That's why we offer competitive prices and fast shipping, so you can get your hands on your new geeky apparel as soon as possible. Plus, with our easy-to-use website and secure checkout process, shopping with us is a breeze.</p>
-          <p class="mb-6 leading-relaxed">So why wait? Visit Codeswear.com today and discover the latest in geeky fashion. With our unique designs and high-quality products, we're sure you'll find something you'll love. Join our community and express your individuality through fashion.</p>
+          <p class="mb-6 leading-relaxed">So why wait? Visit BiggiMart.com today and discover the latest in geeky fashion. With our unique designs and high-quality products, we're sure you'll find something you'll love. Join our community and express your individuality through fashion.</p>
         </div>
         <div class="hidden md:flex w-1/3 mx-1">
           <img src="/0.jpeg" class="object-contain rounded-md " />

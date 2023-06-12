@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import Error from 'next/error';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const Post = ({ addToCart, product, variants, buyNow, error }) => {
+const Post = ({ setProgress, addToCart, product, variants, buyNow, error }) => {
   const Router = useRouter();
   const { slug } = Router.query;
   const [pin, setpin] = useState()
@@ -23,8 +23,10 @@ const Post = ({ addToCart, product, variants, buyNow, error }) => {
   }, [Router.query])
   
   const checkServiceability = async () => {
+    setProgress(40);
     if(document.getElementById('checkin').value == ""){
       toast.info("Please Enter a valid Pincode")
+      setProgress(100);
     }
     else{
     let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
@@ -32,10 +34,12 @@ const Post = ({ addToCart, product, variants, buyNow, error }) => {
     if (Object.keys(pinJson).includes(pin)) {
       setservice(true);
       toast.success("This pincode is Serviceable")
+      setProgress(100);
     }
     else {
       setservice(false);
       toast.warn("No seller ship to this pincode yet")
+      setProgress(100);
     }
   }
   }

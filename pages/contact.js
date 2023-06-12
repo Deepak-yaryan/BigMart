@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="flex flex-col justify-center items-center">
           <div>
             <h2 className="text-center text-3xl font-bold leading-tight">Lets talk about everything!</h2>
-            <img className="h-40 mx-auto py-2" src="/codeswearcircle.png" alt="" />
+            <img className="h-40 mx-auto py-2 rounded-3xl" src="/BiggiMartcircle.png" alt="" />
             <p className="text-center text-xl lg:text-2xl font-medium leading-tight">Feel free to ask us anything!</p>
             <p className="py-4 px-4 text-md lg:text-md leading-tight text-center">If you have any questions regarding  your order, feel free to send email, call or Whatsapp us on our support number</p>
             <div className="flex justify-between">
@@ -26,7 +26,7 @@ const Contact = () => {
                 <span className="font-bold">Customer Support</span>
                 <br />
                 Call/Whatsapp:
-                <a className="underline text-blue-600 dark:text-blue-400" rel="noreferrer" target="_blank" href="https://wa.me/7078073838?text=Hi,%20I%20need%20to%20enquire%20about%20products%20on%20CodesWear">+91 8447891511</a>
+                <a className="underline text-blue-600 dark:text-blue-400" rel="noreferrer" target="_blank" href="https://wa.me/7078073838?text=Hi,%20I%20need%20to%20enquire%20about%20products%20on%20BiggiMart">+91 8447891511</a>
                 <br />
                 Email: deepakyaryan898@gmail.com
                 <br />

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 
-const Signup = () => {
+const Signup = ({setProgress}) => {
   const Base_Url = process.env.NEXT_PUBLIC_HOST;
   let router = useRouter();
   const [username, setUsername] = useState('')
@@ -18,6 +18,7 @@ const Signup = () => {
   }, [])
 
 const handleSubmit = async (e) => {
+  setProgress(40);
   e.preventDefault();
   const data = {username,name,email,password};
   
@@ -30,6 +31,7 @@ const handleSubmit = async (e) => {
   })
   let response = await res.json();
   toast.success("Thanks! your account has been successfully created")
+  setProgress(100);
   console.log(response);
   setUsername('');
   setName('');
@@ -58,7 +60,7 @@ const handleChange = (e) => {
     <>
       <div className="flex min-h-screen flex-col justify-start px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img className="mx-auto h-12 w-auto" src="/codeswearcircle.png" alt="Your Company" />
+          <img className="mx-auto h-24 w-auto rounded" src="/BiggiMartcircle.png" alt="Your Company" />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up for an account</h2>
         </div>
 

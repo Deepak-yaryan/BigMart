@@ -32,19 +32,19 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
   const ref = useRef();
 
   return (
-    <div className={`py-4 z-50 sticky top-0 bg-slate-50 flex flex-col md:flex-row md:justify-start justify-center items-center shadow-lg ${!sidebar && 'overflow-hidden'}`}>
-      <div className="logo mx-5">
+    <div className={`pt-4 z-50 sticky top-0 bg-slate-50 flex flex-col md:flex-row md:p-50 md:justify-start justify-center items-center shadow-lg ${!sidebar && 'overflow-hidden'}`}>
+      <div className="w-44 logo mx-5 md:mr-20 hover:scale-110 duration-200">
         <Link href="/">
-          <img className='cursor-pointer' src="/logo.png" alt="logo image" width={200} height={40} />
+          <img className='cursor-pointer rounded-md' src="/logo.png" alt="logo image" width={200} height={40} />
         </Link>
       </div>
-      <div className="nav">
-        <ul className='flex items-center space-x-6 font-medium md:text-md'>
-          <li><Link href="/tshirts" legacyBehavior><a>Tshirts</a></Link></li>
-          <li><Link href="/hoodies" legacyBehavior><a>Hoodies</a></Link></li>
-          <li><Link href="/caps" legacyBehavior><a>Caps</a></Link></li>
-          <li><Link href="/mugs" legacyBehavior><a>Mugs</a></Link></li>
-          <li><Link href="/mousepads" legacyBehavior><a>MousePads</a></Link></li>
+      <div className="nav pb-1 pt-4">
+        <ul className='flex items-center space-x-5 sm:space-x-10 md:space-x-10 font-semibold md:text-md'>
+          <li className='hover:scale-110 hover:duration-200'><Link href="/tshirts" legacyBehavior><a className='text- flex flex-col items-center'> <div className='w-12 h-12 shadow-lg shadow-pink-400 rounded-3xl p-1'><img src="/tshirt.png" alt="Category Image" /></div> Tshirts</a></Link></li>
+          <li className='hover:scale-110 hover:duration-200'><Link href="/hoodies" legacyBehavior><a className='text-sm flex flex-col items-center'> <div className='w-12 h-12 shadow-lg shadow-pink-400 rounded-3xl p-1'><img src="/hoodie.png" alt="Category Image" /></div> Hoodies</a></Link></li>
+          <li className='hover:scale-110 hover:duration-200'><Link href="/caps" legacyBehavior><a className='text-sm flex flex-col items-center'> <div className='w-12 h-12 shadow-lg shadow-pink-400 rounded-3xl p-1'><img src="/cap.png" alt="Category Image" /></div> Caps</a></Link></li>
+          <li className='hover:scale-110 hover:duration-200'><Link href="/mugs" legacyBehavior><a className='text-sm flex flex-col items-center'> <div className='w-12 h-12 shadow-lg shadow-pink-400 rounded-3xl p-1'><img src="/coffee-shop.png" alt="Category Image" /></div> Mugs</a></Link></li>
+          <li className='hover:scale-110 hover:duration-200'><Link href="/mousepads" legacyBehavior><a  className='text-sm flex flex-col items-center'> <div className='w-12 h-12 shadow-lg shadow-pink-400 rounded-3xl p-1'><img src="/mouse-pad.png" alt="Category Image" /></div> MousePads</a></Link></li>
         </ul>
       </div>
 

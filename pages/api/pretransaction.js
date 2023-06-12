@@ -82,7 +82,7 @@ const handler = async (req, res) => {
             },
             order_meta: {
                 // notify_url: "${process.env.NEXT_PUBLIC_HOST}/api/getPayment?order_id={order_id}",
-                return_url: `${BASE_URL}/api/posttransaction?order_id={order_id}`,
+                return_url: `${BASE_URL}/api/posttransaction/?order_id={order_id}`,
             },
             terminal_data: {
 

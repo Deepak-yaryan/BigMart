@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
                 <p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
               </li>
               <li>
-                <p><strong>Company</strong>(referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Codeswear, Rampur, Uttarpradesh.</p>
+                <p><strong>Company</strong>(referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to BiggiMart, Rampur, Uttarpradesh.</p>
               </li>
               <li>
                 <p>
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <p><strong>Website</strong>
-                  refers to Codeswear, accessible from <a href="https://www.codeswear.com" rel="external nofollow noopener noreferrer" target="_blank">https://www.codeswear.com</a></p>
+                  refers to BiggiMart, accessible from <a href="https://www.BiggiMart.com" rel="external nofollow noopener noreferrer" target="_blank">https://www.BiggiMart.com</a></p>
               </li>
               <li>
                 <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -186,7 +186,7 @@ const PrivacyPolicy = () => {
             <ul>
               <li>
                 By visiting this page on our website:
-                <a href="https://ww.codeswear.com/privacy" rel="external nofollow noopener noreferrer" target="_blank">https://ww.codeswear.com/contact</a>
+                <a href="https://ww.BiggiMart.com/privacy" rel="external nofollow noopener noreferrer" target="_blank">https://ww.BiggiMart.com/contact</a>
               </li>
             </ul>
           </div>

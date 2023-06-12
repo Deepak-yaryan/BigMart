@@ -66,13 +66,16 @@ export default function App({ Component, pageProps }) {
 
   const addToCart = (itemCode,qty,price,name,size,variant)=> { 
     let newCart = JSON.parse(JSON.stringify(cart));
+    setProgress(40);
     if(itemCode in cart){
       newCart[itemCode].qty = cart[itemCode].qty + 1;
+      setProgress(100);
       toast.success(`${serial} Item added to the Cart`);
     }
     else{
       newCart[itemCode] = {qty: 1,price,name,size,variant};
       serial = serial + 1;
+      setProgress(100);
       toast.success(`${serial} Item added to the Cart`);
     }
     setcart(newCart);
@@ -82,30 +85,37 @@ export default function App({ Component, pageProps }) {
   }
   
   const buyNow = (itemCode,qty,price,name,size,variant) => {
+    setProgress(40);
     let newCart = {}
     newCart[itemCode] = {qty: 1,price,name,size,variant};
     setcart(newCart);
     savecart(newCart);
     setserial(1);
     saveSerial(1);
+    setProgress(100);
     router.push('/checkout')
   }
-
+  
   const clearCart = ()=> {
+    setProgress(40);
     toast.info("Your cart is Cleared");
+    setProgress(100);
     setcart({});
     savecart({});
     setserial(0);
     saveSerial(0);
   }
-
+  
   const removeFromCart = (itemCode,qty,price,name,size,variant)=> {
+    setProgress(40);
     let newCart = JSON.parse(JSON.stringify(cart));
     if(itemCode in cart){
       newCart[itemCode].qty = cart[itemCode].qty - 1;
+      setProgress(100);
       // serial = serial - 1;
     }
     if(newCart[itemCode].qty <= 0){
+      setProgress(100);
       delete newCart[itemCode];
       serial = 0;
     }
@@ -125,7 +135,7 @@ export default function App({ Component, pageProps }) {
   />
   <ToastContainer position='bottom-center' autoClose={1500} />
   <Navbar logout={logout} user={user} cart={cart} serial={serial} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
-  <Component logout={logout} cart={cart} buyNow={buyNow} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
+  <Component setProgress={setProgress} logout={logout} cart={cart} buyNow={buyNow} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
   <Footer />
   </>
   ) 

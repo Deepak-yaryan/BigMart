@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { toast } from "react-toastify"
 import { useRouter } from 'next/router'
 
-const Login = () => {
+const Login = ({setProgress}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   let router = useRouter();
@@ -16,6 +16,7 @@ const Login = () => {
   
 
   const handleSubmit = async (e) => {
+    setProgress(40);
     e.preventDefault();
     const data = {email,password};
     
@@ -33,15 +34,16 @@ const Login = () => {
       toast.success("Loggedin Successfully");
       setTimeout(() => {
         // router.push(`${process.env.NEXT_PUBLIC_HOST}`);
+        setProgress(100);
         window.location = `${process.env.NEXT_PUBLIC_HOST}`;
       }, 1000);
     }
     else{
       toast.error(response.error);
+      setProgress(100);
+      setEmail('');
+      setPassword('');
     }
-    
-    setEmail('');
-    setPassword('');
   }
   
   const handleChange = (e) => {
@@ -59,7 +61,7 @@ const Login = () => {
     <>
       <div className="flex min-h-screen flex-col justify-start px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img className="mx-auto h-12 w-auto" src="/codeswearcircle.png" alt="Your Company" />
+          <img className="mx-auto h-24 w-auto rounded" src="/BiggiMartcircle.png" alt="Your Company" />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
 
