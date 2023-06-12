@@ -104,6 +104,7 @@ const Checkout = ({ setProgress ,cart, clearCart, addToCart, removeFromCart, sub
 
 
   const initiatePayment = async () => {
+    setProgress(40);
     let oid = JSON.stringify(Math.floor(Math.random() * Date.now()));
     const data = { cart, subTotal, email, oid, name, username, address, pincode, phone, state, city };
     // Get a paymentSession ID
@@ -119,18 +120,21 @@ const Checkout = ({ setProgress ,cart, clearCart, addToCart, removeFromCart, sub
       let paymentSessionId = paymentResponse.payment_session_id;
   
       if (paymentSessionId == "") {
+        setProgress(100);
         alert("No Session_Id Specified");
         return;
       }
   
       const cashfree = new Cashfree(paymentSessionId);
+      setProgress(100);
       cashfree.redirect();
     }
     else{
-      console.log(paymentResponse.error);
       if(paymentResponse.cartClear){
+        setProgress(100);
         clearCart();
       }
+      setProgress(100);
       toast.error(paymentResponse.error);
     }
   }
