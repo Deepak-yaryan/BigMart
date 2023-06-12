@@ -32,9 +32,9 @@ const Login = ({setProgress}) => {
     if(response.Success){
       localStorage.setItem('token', response.token);
       toast.success("Loggedin Successfully");
-      setProgress(100);
       setTimeout(() => {
         // router.push(`${process.env.NEXT_PUBLIC_HOST}`);
+        setProgress(100);
         window.location = `${process.env.NEXT_PUBLIC_HOST}`;
       }, 1000);
     }
