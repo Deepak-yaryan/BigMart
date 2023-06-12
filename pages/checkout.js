@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { toast } from 'react-toastify';
 
-const Checkout = ({ cart, clearCart, addToCart, removeFromCart, subTotal }) => {
+const Checkout = ({ setProgress ,cart, clearCart, addToCart, removeFromCart, subTotal }) => {
   const BASE_URL = process.env.NEXT_PUBLIC_HOST;
   const [username, setUsername] = useState("")
   const [name, setName] = useState("")

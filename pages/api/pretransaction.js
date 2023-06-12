@@ -77,6 +77,7 @@ const handler = async (req, res) => {
             order_currency: 'INR',
             customer_details: {
                 customer_id: req.body.username,
+                customer_name: req.body.name,
                 customer_email: req.body.email,
                 customer_phone: req.body.phone,
             },
