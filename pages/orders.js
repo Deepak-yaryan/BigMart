@@ -39,7 +39,7 @@ const Orders = () => {
             return <div key = {item._id} className="order xl:w-full p-4">
                 <Link href={'/order?id=' + item._id} legacyBehavior>
                 <a>
-                <div className="flex justify-center items-center shadow-sm shadow-pink-500 py-6 rounded-lg">
+                <div className="flex justify-center items-center shadow-sm shadow-pink-500 py-6 rounded-lg space-x-4">
                     <div className="w-1/4 inline-flex items-center justify-center">
                         <img className='md:h-24 h-12 hover:scale-110 duration-200 rounded' src={item.products[`${Object.keys(item.products)}`]['img']} alt="Order Image" />
                     </div>
