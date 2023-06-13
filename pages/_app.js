@@ -32,7 +32,6 @@ export default function App({ Component, pageProps }) {
         saveSerial(JSON.parse(localStorage.getItem("serial")));
       }
     } catch (error) {
-      console.log(error);
       localStorage.clear();
     }
     const token = localStorage.getItem('token');
@@ -64,7 +63,7 @@ export default function App({ Component, pageProps }) {
     setsubTotal(subt);
   }
 
-  const addToCart = (itemCode,qty,price,name,size,variant)=> { 
+  const addToCart = (itemCode,qty,price,name,size,variant,img)=> { 
     let newCart = JSON.parse(JSON.stringify(cart));
     setProgress(40);
     if(itemCode in cart){
@@ -73,7 +72,7 @@ export default function App({ Component, pageProps }) {
       toast.success(`${serial} Item added to the Cart`);
     }
     else{
-      newCart[itemCode] = {qty: 1,price,name,size,variant};
+      newCart[itemCode] = {qty: 1,price,name,size,variant,img};
       serial = serial + 1;
       setProgress(100);
       toast.success(`${serial} Item added to the Cart`);
@@ -84,10 +83,10 @@ export default function App({ Component, pageProps }) {
     saveSerial(serial);
   }
   
-  const buyNow = (itemCode,qty,price,name,size,variant) => {
+  const buyNow = (itemCode,qty,price,name,size,variant,img) => {
     setProgress(40);
     let newCart = {}
-    newCart[itemCode] = {qty: 1,price,name,size,variant};
+    newCart[itemCode] = {qty: 1,price,name,size,variant,img};
     setcart(newCart);
     savecart(newCart);
     setserial(1);

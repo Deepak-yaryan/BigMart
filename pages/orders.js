@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useState } from 'react'
+import { object } from 'prop-types'
 
 const Orders = () => {
     const router = useRouter();
@@ -38,27 +39,27 @@ const Orders = () => {
             return <div key = {item._id} className="order xl:w-full md:w-1/2 p-4">
                 <Link href={'/order?id=' + item._id} legacyBehavior>
                 <a>
-                <div className="flex items-center shadow-sm shadow-pink-500 py-1 rounded-lg">
+                <div className="flex justify-center items-center shadow-sm shadow-pink-500 py-1 rounded-lg">
                     <div className="w-1/4 inline-flex items-center justify-center">
-                        <img className='h-20' src="/0.jpeg" alt="Order Image" />
+                        <img className='md:h-24 h-16 hover:scale-110 duration-200 rounded' src={item.products[`${Object.keys(item.products)}`]['img']} alt="Order Image" />
                     </div>
-                    <div className='w-2/4 flex-col text-center'>
-                    <span className="text-sm text-gray-900 font-medium title-font text-center">Order id / Date</span>
+                    <div className='w-1/3 md:w-2/4 h-20 flex-col text-center'>
+                    <span className="md:text-sm text-xs text-gray-900 font-medium title-font text-center">Order id / Date</span>
                     <br />
                     <hr />
-                    <span className="text-sm text-gray-900 title-font text-center">{item.orderId} / {(item.createdAt).slice(0,10)}</span>
+                    <span className="md:text-sm text-xs text-gray-900 title-font text-center">{item.orderId}<br/>{(item.createdAt).slice(0,10)}</span>
                     </div>
-                    <div className='w-1/4 flex-col text-center'>
-                    <span className="text-sm leading-relaxed font-medium text-center">Price</span>
+                    <div className='w-1/4 md:w-1/4 h-20 flex-col text-center justify-center'>
+                    <span className="md:text-sm text-xs leading-relaxed font-medium text-center">Price</span>
                     <br />
                     <hr />
-                    <span className="text-xs leading-relaxed text-center">Rs {item.amount}.00</span>
+                    <span className="md:text-xs text-xs leading-relaxed text-center">Rs {item.amount}.00</span>
                     </div>
-                    <div className='w-1/4 flex-col text-center'>
-                    <span className="text-sm leading-relaxed font-medium text-center">Payment / Order Status</span>
+                    <div className='w-2/4 md:w-1/4 h-20 flex-col text-center justify-start'>
+                    <span className="md:text-sm text-xs leading-relaxed font-medium text-center">Status</span>
                     <br />
                     <hr />
-                    <span className="text-xs leading-relaxed text-center">{item.status} / Order Placed</span>
+                    <span className="md:text-xs text-xs leading-relaxed text-center">{item.status}<br/>Order Placed</span>
                     </div>
                 </div>
                 </a>

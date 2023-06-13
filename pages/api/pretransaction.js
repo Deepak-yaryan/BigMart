@@ -48,12 +48,10 @@ const handler = async (req, res) => {
             res.status(200).json({success: false,"error": "Please enter a valid 10 digit Phone Number", cartClear: false});
             return
         }
-        console.log(Number.isInteger(Number.parseInt(req.body.pincode)))
         if(req.body.pincode.length !== 6 || !Number.isInteger(Number.parseInt(req.body.pincode))){
             res.status(200).json({success: false,"error": "Please enter a valid 6 digit Pincode", cartClear: false});
             return
         }
-    console.log(req.body.city, req.body.state,req.body.pincode);
         // Initiate an order corresponding to this order id
         let order = new Order({
             email: req.body.email,
@@ -95,7 +93,6 @@ const handler = async (req, res) => {
             signature: signature
         }
 
-console.log(cfParams)
         const requestAsync = async () => {
             const options = {
                 method: 'POST',
@@ -118,18 +115,14 @@ console.log(cfParams)
                 const req = http.request(options, (res) => {
                     res.on('data', (d) => {
                         response += d;
-                        console.log(response);
                     })
                     res.on('end', () => {
                         let ress = JSON.parse(response)
                         ress.success = true
                         ress.cartClear = false
-                        console.log(resolve(ress));
-                        console.log("Response: ", response);
+                        resolve(ress);
                     });
                 });
-                // req.on('error', reject);
-                // console.log(post_data);
                 req.write(JSON.stringify(cfParams.body),()=>{
                     cfParams.head
                 })
@@ -139,7 +132,6 @@ console.log(cfParams)
 
         let myr = await requestAsync()
         res.status(200).json(myr)
-        console.log(myr)
     }
 }
 

@@ -141,8 +141,8 @@ const Post = ({ setProgress, addToCart, product, variants, buyNow, error }) => {
               <div className="flex">
                 {product.availaibleQty > 0 &&<span className="flex flex-col md:flex-row title-font font-medium text-xl md:text-2xl text-gray-900"><span>₹{product.price}.00</span><span className='ml-2 text-sm'>INR</span></span>}
                 {product.availaibleQty <= 0 &&<span className="flex flex-col md:flex-row title-font font-medium text-lg md:text-2xl text-gray-900">Out of Stock!</span>}
-                <button disabled={product.availaibleQty<=0} onClick={() => { buyNow(slug, product.availaibleQty, product.price, product.title, product.size, product.color) }} className="disabled:bg-pink-300 ml-10 text-white bg-pink-500 border-0 px-2 focus:outline-none hover:bg-pink-600 rounded ">Buy Now</button>
-                <button disabled={product.availaibleQty<=0} onClick={() => {let audio = new Audio('/ting.mp3'); audio.play(); addToCart(slug, product.availaibleQty, product.price, product.title, product.size, product.color); }} id="addCart" className="disabled:bg-pink-300 ml-5 text-white bg-pink-500 border-0 px-2 focus:outline-none hover:bg-pink-600 rounded ">Add to Cart</button>
+                <button disabled={product.availaibleQty<=0} onClick={() => { buyNow(slug, product.availaibleQty, product.price, product.title, product.size, product.color, product.img) }} className="disabled:bg-pink-300 ml-10 text-white bg-pink-500 border-0 px-2 focus:outline-none hover:bg-pink-600 rounded ">Buy Now</button>
+                <button disabled={product.availaibleQty<=0} onClick={() => {let audio = new Audio('/ting.mp3'); audio.play(); addToCart(slug, product.availaibleQty, product.price, product.title, product.size, product.color, product.img); }} id="addCart" className="disabled:bg-pink-300 ml-5 text-white bg-pink-500 border-0 px-2 focus:outline-none hover:bg-pink-600 rounded ">Add to Cart</button>
                 
               </div>
               <div className='mt-6 mx-2 font-medium'>

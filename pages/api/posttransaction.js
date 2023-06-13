@@ -27,7 +27,6 @@ const handler = async (req, res) => {
             const req = http.request(options, (res) => {
                 res.on('data', (d) => {
                     response += d;
-                    console.log(response);
                 })
                 res.on('end', () => {
                     resolve(JSON.parse(response));
