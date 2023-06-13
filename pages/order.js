@@ -39,9 +39,9 @@ const MyOrder = ({ order, clearCart }) => {
 
               {Object.keys(products).map((key) => {
                 return <div key={key} className="flex border-gray-200 py-2">
-                  <span className="text-gray-500">{products[key].name}({products[key].size}/{products[key].variant})</span>
-                  <span className="md:ml-32 ml-10 sm:ml-40 text-gray-900">{products[key].qty}</span>
-                  <span className="ml-auto text-gray-900 text-sm">₹{products[key].price}.00 X {products[key].qty} <br /> = ₹{products[key].price * products[key].qty}.00</span>
+                  <span className="text-gray-500">{products[key].name}<br/>({products[key].size}/{products[key].variant})</span>
+                  <span className="md:ml-64 md:pl-6 ml-20 lg:ml-44 text-gray-900">{products[key].qty}</span>
+                  <span className="ml-auto text-gray-900">₹{products[key].price}.00 X {products[key].qty} <br /> = ₹{products[key].price * products[key].qty}.00</span>
                 </div>
               })}
 
