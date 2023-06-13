@@ -40,8 +40,8 @@ const MyOrder = ({ order, clearCart }) => {
               {Object.keys(products).map((key) => {
                 return <div key={key} className="flex border-gray-200 py-2">
                   <span className="text-gray-500">{products[key].name}({products[key].size}/{products[key].variant})</span>
-                  <span className="ml-auto text-gray-900">{products[key].qty}</span>
-                  <span className="ml-auto text-gray-900">₹{products[key].price}.00 X {products[key].qty} = ₹{products[key].price * products[key].qty}.00</span>
+                  <span className="md:ml-32 ml-10 sm:ml-40 text-gray-900">{products[key].qty}</span>
+                  <span className="ml-auto text-gray-900 text-sm">₹{products[key].price}.00 X {products[key].qty} <br /> = ₹{products[key].price * products[key].qty}.00</span>
                 </div>
               })}
 
@@ -51,7 +51,7 @@ const MyOrder = ({ order, clearCart }) => {
                 <button className="text-white bg-pink-500 border-0 mt-2 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded">Track Order</button>
               </div>
             </div>
-            <img className='md:w-1/3 w-96 md:h-1/3 h-96 text-center m-auto rounded lg:hover:scale-110 duration-200' src={imag} alt="Tshirt Image" />
+            <img className='md:w-1/3 w-72 md:h-1/3 h-72 text-center m-auto rounded lg:hover:scale-110 duration-200' src={imag} alt="Tshirt Image" />
             {/* <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={imag} /> */}
           </div>
         </div>
