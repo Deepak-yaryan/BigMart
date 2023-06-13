@@ -36,12 +36,12 @@ const Orders = () => {
             </div>
 
             {orders.map((item)=>{
-            return <div key = {item._id} className="order xl:w-full py-4 px-1">
+            return <div key = {item._id} className="order xl:w-full py-4 px-0.5">
                 <Link href={'/order?id=' + item._id} legacyBehavior>
                 <a>
-                <div className="flex justify-center items-center shadow-sm shadow-pink-500 py-6 rounded-lg space-x-2">
-                    <div className="w-1/4 inline-flex items-center justify-center">
-                        <img className='md:h-24 h-12 hover:scale-110 duration-200 rounded' src={item.products[`${Object.keys(item.products)}`]['img']} alt="Order Image" />
+                <div className="flex justify-center items-center shadow-sm shadow-pink-500 py-6 rounded-lg space-x-1">
+                    <div className="w-1/5 inline-flex items-center justify-center">
+                        <img className='md:h-24 h-11 hover:scale-110 duration-200 rounded' src={item.products[`${Object.keys(item.products)}`]['img']} alt="Order Image" />
                     </div>
                     <div className='w-1/3 md:w-2/4 h-20 flex-col text-center'>
                     <span className="md:text-sm text-xs text-gray-900 font-medium title-font text-center">Order id / Date</span>
@@ -55,7 +55,7 @@ const Orders = () => {
                     <hr />
                     <span className="md:text-xs text-xs leading-relaxed text-center">Rs {item.amount}.00</span>
                     </div>
-                    <div className='w-2/4 md:w-1/4 h-20 flex-col text-center justify-start'>
+                    <div className='w-3/5 md:w-1/4 h-20 flex-col text-center justify-start'>
                     <span className="md:text-sm text-xs leading-relaxed font-medium text-center">Status</span>
                     <br />
                     <hr />
