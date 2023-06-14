@@ -4,6 +4,7 @@ import { toast } from "react-toastify"
 import { useRouter } from 'next/router'
 
 const Login = ({setProgress}) => {
+  const Base_Url = process.env.NEXT_PUBLIC_HOST;
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   let router = useRouter();
@@ -20,7 +21,7 @@ const Login = ({setProgress}) => {
     e.preventDefault();
     const data = {email,password};
     
-    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`,{
+    let res = await fetch(`${Base_Url}/api/login`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,7 +36,7 @@ const Login = ({setProgress}) => {
       setTimeout(() => {
         // router.push(`${process.env.NEXT_PUBLIC_HOST}`);
         setProgress(100);
-        window.location = `${process.env.NEXT_PUBLIC_HOST}`;
+        window.location = `${Base_Url}`;
       }, 1000);
     }
     else{
